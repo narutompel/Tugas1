@@ -36,7 +36,7 @@ const cardData = [
         <div class="card-body">
           <h5 class="card-title">${data.title}</h5>
           <p class="card-text">${data.description}</p>
-          <a href="#" class="btn btn-primary" onclick="openModal('${data.modalContent}')">Lihat</a>
+          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-modal-content="${data.modalContent}">Lihat</a>
         </div>
       </div>
     `;
@@ -48,6 +48,9 @@ const cardData = [
     const tutorialSection = document.getElementById("cardContainer");
     cardData.forEach(data => {
       const card = createCard(data);
+      card.querySelector(".btn-primary").addEventListener("click", function() {
+        openModal(this.getAttribute("data-modal-content"));
+      });
       tutorialSection.appendChild(card);
     });
   }
