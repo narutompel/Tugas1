@@ -77,3 +77,6 @@ function openModal(content) {
 
 Dokumen Terselesaikan (DOMContentLoaded Event Listener):
 document.addEventListener("DOMContentLoaded", appendCards);
+
+
+data-modal-content="${data.modalContent}"
